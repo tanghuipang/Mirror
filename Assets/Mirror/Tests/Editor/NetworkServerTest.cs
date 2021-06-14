@@ -277,7 +277,7 @@ namespace Mirror.Tests
             Assert.That(NetworkServer.connections.Count, Is.EqualTo(0));
 
             // add first connection
-            NetworkConnectionToClient conn42 = new NetworkConnectionToClient(42, false);
+            NetworkConnectionToClient conn42 = new NetworkConnectionToClient(42);
             bool result42 = NetworkServer.AddConnection(conn42);
             Assert.That(result42, Is.True);
             Assert.That(NetworkServer.connections.Count, Is.EqualTo(1));
@@ -285,7 +285,7 @@ namespace Mirror.Tests
             Assert.That(NetworkServer.connections[42], Is.EqualTo(conn42));
 
             // add second connection
-            NetworkConnectionToClient conn43 = new NetworkConnectionToClient(43, false);
+            NetworkConnectionToClient conn43 = new NetworkConnectionToClient(43);
             bool result43 = NetworkServer.AddConnection(conn43);
             Assert.That(result43, Is.True);
             Assert.That(NetworkServer.connections.Count, Is.EqualTo(2));
@@ -295,7 +295,7 @@ namespace Mirror.Tests
             Assert.That(NetworkServer.connections[43], Is.EqualTo(conn43));
 
             // add duplicate connectionId
-            NetworkConnectionToClient connDup = new NetworkConnectionToClient(42, false);
+            NetworkConnectionToClient connDup = new NetworkConnectionToClient(42);
             bool resultDup = NetworkServer.AddConnection(connDup);
             Assert.That(resultDup, Is.False);
             Assert.That(NetworkServer.connections.Count, Is.EqualTo(2));
@@ -313,7 +313,7 @@ namespace Mirror.Tests
             Assert.That(NetworkServer.connections.Count, Is.EqualTo(0));
 
             // add connection
-            NetworkConnectionToClient conn42 = new NetworkConnectionToClient(42, false);
+            NetworkConnectionToClient conn42 = new NetworkConnectionToClient(42);
             bool result42 = NetworkServer.AddConnection(conn42);
             Assert.That(result42, Is.True);
             Assert.That(NetworkServer.connections.Count, Is.EqualTo(1));
@@ -334,7 +334,7 @@ namespace Mirror.Tests
             Assert.That(NetworkServer.connections.Count, Is.EqualTo(0));
 
             // add connection
-            NetworkConnectionToClient conn42 = new NetworkConnectionToClient(42, false);
+            NetworkConnectionToClient conn42 = new NetworkConnectionToClient(42);
             NetworkServer.AddConnection(conn42);
             Assert.That(NetworkServer.connections.Count, Is.EqualTo(1));
 
@@ -360,7 +360,7 @@ namespace Mirror.Tests
             Assert.That(NetworkServer.localConnection, Is.EqualTo(localConnection));
 
             // add connection
-            NetworkConnectionToClient conn42 = new NetworkConnectionToClient(42, false);
+            NetworkConnectionToClient conn42 = new NetworkConnectionToClient(42);
             NetworkServer.AddConnection(conn42);
             Assert.That(NetworkServer.connections.Count, Is.EqualTo(1));
 
@@ -389,7 +389,7 @@ namespace Mirror.Tests
             Assert.That(NetworkServer.connections.Count, Is.EqualTo(0));
 
             // add a connection
-            NetworkConnectionToClient connection = new NetworkConnectionToClient(42, false);
+            NetworkConnectionToClient connection = new NetworkConnectionToClient(42);
             NetworkServer.AddConnection(connection);
             Assert.That(NetworkServer.connections.Count, Is.EqualTo(1));
 
@@ -672,7 +672,7 @@ namespace Mirror.Tests
             Assert.That(NetworkServer.connections.Count, Is.EqualTo(0));
 
             // add a connection
-            NetworkConnectionToClient connection = new NetworkConnectionToClient(42, false);
+            NetworkConnectionToClient connection = new NetworkConnectionToClient(42);
             NetworkServer.AddConnection(connection);
             Assert.That(NetworkServer.connections.Count, Is.EqualTo(1));
 
