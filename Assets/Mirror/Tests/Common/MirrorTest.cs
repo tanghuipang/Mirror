@@ -155,6 +155,12 @@ namespace Mirror.Tests
             Debug.Assert(NetworkClient.active, "NetworkClient needs to be active before spawning.");
             Debug.Assert(NetworkServer.active, "NetworkServer needs to be active before spawning.");
 
+            if (NetworkClient.connection != null)
+                ((NetworkConnectionToServer)NetworkClient.connection).Update();
+
+            foreach (NetworkConnectionToClient connection in NetworkServer.connections.Values)
+                connection.Update();
+
             // run update so message are processed
             NetworkServer.NetworkLateUpdate();
             NetworkClient.NetworkLateUpdate();
